@@ -5,24 +5,29 @@ const cors = require("cors");
 
 const router = express.Router();
 
-// Configuración de CORS
 router.use(
   cors({
-    origin: "https://tu-dominio-permitido.com", // Cambia esto por el dominio permitido
+    origin: process.env.CORS,
     methods: ["GET", "POST"],
   })
 );
 
-// Configuración de rate limiting
+const windowMs = process.env.RATE_LIMIT_TIME
+  ? parseInt(process.env.RATE_LIMIT_TIME) * 60 * 1000
+  : 15 * 60 * 1000;
+
+const max = process.env.RATE_LIMIT_API
+  ? parseInt(process.env.RATE_LIMIT_API)
+  : 100;
+
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100, // Limita cada IP a 100 solicitudes por ventana
+  windowMs: windowMs,
+  max: max,
   message: "Too many requests from this IP, please try again later.",
 });
 
 router.use(limiter);
 
-// Validación de datos
 const validateData = (req, res, next) => {
   const data = req.method === "POST" ? req.body.data : req.query.data;
   if (!data) {
