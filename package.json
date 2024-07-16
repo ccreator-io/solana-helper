@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccreator-io/solana-helper.git"
+  },
+  "keywords": [],
+  "author": "ccreator.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccreator-io/solana-helper"
+  },
+  "homepage": "https://github.com/ccreator-io/solana-helper#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "sqlite3": "^5.1.7"
+  }
+}
