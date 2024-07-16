@@ -1,4 +1,4 @@
-[# Ccreator Solana Helper API
+# Ccreator Solana Helper API
 Welcome to the Ccreator Solana Helper API! This public API is designed to provide various helper for working with Solana blockchain data, with a focus on ease of maintenance and scalability. Initially, we are offering Base58 encoding and decoding functionalities. In the future, we plan to expand this API with additional features and tools to assist developers and users working with Solana.
 
 [Web: Coin Creator ccreator.io](https://www.ccreator.io)
